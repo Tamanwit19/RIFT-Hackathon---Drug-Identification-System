@@ -47,7 +47,7 @@ const ResultCard = ({ result }) => {
           <div className="mt-1"><CheckCircle className="w-5 h-5 text-blue-600" /></div>
           <div>
             <h4 className="font-bold text-slate-800">Clinical Recommendation</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">{clinical_recommendation.text}</p>
+            <p className="text-sm text-slate-600 leading-relaxed">{clinical_recommendation.recommendation_text}</p>
           </div>
         </div>
 
@@ -56,9 +56,9 @@ const ResultCard = ({ result }) => {
             <h4 className="flex items-center text-sm font-bold text-blue-800 mb-2">
               <Info className="w-4 h-4 mr-2" /> AI-Generated Pathophysiology
             </h4>
-            <p className="text-sm text-blue-900 leading-relaxed italic">
+            <div className="text-sm text-blue-900 leading-relaxed italic whitespace-pre-wrap">
               "{llm_generated_explanation.summary}"
-            </p>
+            </div>
             <div className="mt-2 flex flex-wrap gap-2">
               {pharmacogenomic_profile.detected_variants.map(v => (
                 <span key={v.rsid} className="text-[10px] bg-white px-2 py-0.5 rounded border border-blue-200 font-mono">

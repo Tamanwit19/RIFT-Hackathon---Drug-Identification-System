@@ -6,11 +6,7 @@ const UploadPanel = ({ onFileSelect, selectedFile }) => {
 
   const handleFile = (file) => {
     if (file && (file.name.endsWith('.vcf') || file.name.endsWith('.vcf.gz'))) {
-      if (file.size <= 5 * 1024 * 1024) {
-        onFileSelect(file);
-      } else {
-        alert("File size exceeds 5MB limit.");
-      }
+      onFileSelect(file);
     } else {
       alert("Please upload a valid VCF file.");
     }

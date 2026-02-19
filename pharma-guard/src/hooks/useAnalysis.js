@@ -11,7 +11,7 @@ export const useAnalysis = () => {
     if (!file || !drugInput) return;
 
     setLoading(true);
-    setResults(null); // CRITICAL: Clear previous results immediately
+    setResults(null);
     
     try {
       setCurrentStep("Identifying gene targets...");
